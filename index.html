@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AGIR — Lista de Espera | Academia da Magia</title>
+<meta name="description" content="Programa AGIR com Camila Moretti — 90 dias de acompanhamento estratégico para agentes de viagens estruturarem sua agência. Entre na lista de espera da turma Out/Nov/Dez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: oklch(0.19 0.025 260);
+    --bg-alt: oklch(0.15 0.03 260);
+    --card: oklch(0.24 0.025 260);
+    --card-border: oklch(0.32 0.03 260);
+    --card-method: oklch(0.24 0.04 255);
+    --card-method-border: oklch(0.32 0.05 255);
+    --text: oklch(0.93 0.01 260);
+    --text-title: oklch(0.97 0.005 260);
+    --text-secondary: oklch(0.72 0.02 260);
+    --text-muted: oklch(0.62 0.015 260);
+    --gold: oklch(0.75 0.13 85);
+    --gold-soft-bg: oklch(0.3 0.05 85);
+    --blue: oklch(0.6 0.12 250);
+    --blue-soft: oklch(0.7 0.1 250);
+    --danger: oklch(0.6 0.14 20);
+    --error: oklch(0.68 0.14 30);
+    --input-bg: oklch(0.19 0.025 260);
+    --input-border: oklch(0.4 0.03 260);
+  }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Work Sans', sans-serif; overflow-x: hidden; }
+  img { max-width: 100%; }
+  ::selection { background: oklch(0.75 0.13 85 / 0.3); }
+  h1, h2, h3, h4 { font-family: 'Lora', serif; color: var(--text-title); margin: 0; }
+  a { color: var(--gold); }
+  a:hover { color: oklch(0.82 0.12 85); }
+  input, select, textarea { font-family: 'Work Sans', sans-serif; }
+  input::placeholder { color: oklch(0.55 0.02 260); }
+  select:focus, input:focus { outline: none; border-color: var(--gold) !important; box-shadow: 0 0 0 3px oklch(0.75 0.13 85 / 0.18); }
+
+  .section { max-width: 1000px; margin: 0 auto; padding: 70px 6vw; }
+  .section-narrow { max-width: 900px; }
+  .section-tight { max-width: 800px; }
+  .section-tighter { max-width: 760px; }
+  .section-alt { background: var(--bg-alt); }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; }
+  .eyebrow-blue { color: var(--blue-soft); }
+  .center { text-align: center; }
+  h2.title { font-size: clamp(26px, 3.4vw, 38px); line-height: 1.25; margin-bottom: 44px; text-wrap: pretty; }
+
+  .reveal { opacity: 1; transform: translateY(10px); transition: transform .6s cubic-bezier(.16,1,.3,1); }
+  .reveal.is-visible { transform: translateY(0); }
+
+  .grid { display: grid; gap: 20px; }
+  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .grid-3-wide { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .grid-2-wide { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+  .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 26px; transition: transform .3s ease, border-color .3s ease; }
+  .card:hover { transform: translateY(-6px); }
+  .card-hover-blue:hover { border-color: var(--blue); }
+  .card-hover-gold:hover { border-color: var(--gold); }
+  .card-method { background: var(--card-method); border: 1px solid var(--card-method-border); }
+  .card-method:hover { border-color: var(--gold); }
+  .card-flat { background: var(--card); border-radius: 14px; padding: 20px 22px; font-size: 14.5px; font-weight: 500; color: oklch(0.9 0.01 260); transition: border-color .3s ease; border: 1px solid var(--card-border); }
+  .card-flat:hover { border-color: var(--gold); }
+  .card-method-flat { background: var(--card-method); border: 1px solid var(--card-method-border); border-radius: 14px; padding: 18px 20px; font-size: 14.5px; font-weight: 500; color: oklch(0.92 0.01 260); }
+
+  .btn-gold { display: inline-block; cursor: pointer; background: var(--gold); color: oklch(0.2 0.02 260); padding: 16px 36px; border: none; border-radius: 100px; font-weight: 600; font-size: 16px; font-family: inherit; transition: transform .25s ease, box-shadow .25s ease; }
+  .btn-gold:hover { transform: scale(1.04); box-shadow: 0 10px 26px oklch(0.75 0.13 85 / 0.35); }
+  .btn-gold-sm { padding: 10px 20px; font-size: 14px; border-radius: 100px; }
+  .btn-gold-sm:hover { transform: scale(1.04); box-shadow: 0 6px 18px oklch(0.75 0.13 85 / 0.35); }
+
+  /* HEADER */
+  .site-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 6vw; position: sticky; top: 0; z-index: 40; background: oklch(0.19 0.025 260 / 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid oklch(0.3 0.03 260); }
+  .site-header img { height: 38px; object-fit: contain; flex-shrink: 0; }
+  .site-nav { display: flex; align-items: center; gap: 22px; overflow-x: auto; scrollbar-width: none; }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav button { background: none; border: none; cursor: pointer; font-family: inherit; color: var(--text); font-size: 13.5px; font-weight: 600; white-space: nowrap; padding: 6px 2px; border-bottom: 2px solid transparent; }
+  .site-nav button.active { border-bottom-color: var(--gold); }
+  @media (max-width: 640px) { .site-nav { display: none; } }
+
+  .progress-bar { position: fixed; top: 0; left: 0; height: 3px; z-index: 60; background: linear-gradient(90deg, var(--blue), var(--gold)); width: 0%; }
+
+  /* HERO */
+  .hero { position: relative; max-width: 900px; margin: 0 auto; padding: 90px 6vw 60px; text-align: center; overflow: hidden; }
+  .hero-blob { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; }
+  .hero-blob-1 { top: -60px; left: -120px; width: 320px; height: 320px; background: oklch(0.5 0.1 250 / 0.25); animation: floatBlob 10s ease-in-out infinite; }
+  .hero-blob-2 { top: 20px; right: -100px; width: 280px; height: 280px; background: oklch(0.75 0.13 85 / 0.18); animation: floatBlob2 12s ease-in-out infinite; }
+  .hero-badge { position: relative; display: inline-flex; align-items: center; gap: 8px; background: var(--gold-soft-bg); color: oklch(0.85 0.1 85); padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 28px; }
+  .pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulseDot 1.6s infinite; }
+  .hero h1 { position: relative; font-weight: 600; font-size: clamp(34px, 5vw, 58px); line-height: 1.12; margin: 0 0 22px; text-wrap: pretty; }
+  .hero p.subtitle { position: relative; font-size: 19px; line-height: 1.6; color: var(--text-secondary); max-width: 640px; margin: 0 auto 36px; text-wrap: pretty; }
+  .hero p.trust { position: relative; font-size: 13px; color: var(--text-muted); margin-top: 14px; }
+  .hero-img-wrap { max-width: 1000px; margin: 0 auto 70px; padding: 0 6vw; }
+  .hero-img-wrap img { width: 100%; max-height: 420px; object-fit: cover; object-position: top; border-radius: 20px; border: 1px solid var(--card-border); display: block; }
+
+  @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  @keyframes floatBlob { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-20px,24px) scale(1.08); } }
+  @keyframes floatBlob2 { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(18px,-18px) scale(1.05); } }
+
+  /* SOBRE */
+  .about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 44px; align-items: center; }
+  .about-grid img { width: 100%; border-radius: 20px; object-fit: cover; max-height: 420px; border: 1px solid var(--card-border); display: block; }
+  @media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; } }
+
+  .method-letter { font-family: 'Lora', serif; font-size: 30px; font-weight: 600; color: var(--gold); margin-bottom: 12px; }
+  .month-label { font-family: 'Lora', serif; font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 10px; }
+  .bullet-list { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-muted); }
+
+  .quote-card p.quote { font-size: 15px; line-height: 1.65; color: oklch(0.85 0.01 260); margin: 0 0 18px; font-style: italic; }
+  .quote-card p.name { font-size: 14px; font-weight: 600; margin: 0; color: var(--text-title); }
+  .quote-card p.role { font-size: 13px; color: var(--text-muted); margin: 0; }
+
+  .option-card { background: var(--card); border-radius: 16px; padding: 28px; border-top: 3px solid var(--card-border); }
+  .option-card.bad { border-top-color: var(--danger); }
+  .option-card.good { border-top-color: var(--gold); }
+  .option-card h3 { font-size: 16px; margin: 0 0 12px; }
+  .option-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: var(--text-muted); line-height: 1.5; }
+
+  /* FORM */
+  .form-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 20px; padding: 36px; display: flex; flex-direction: column; gap: 22px; }
+  .form-field label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 7px; color: oklch(0.85 0.01 260); }
+  .form-field input, .form-field select {
+    width: 100%; padding: 13px 14px; border-radius: 10px; border: 1px solid var(--input-border);
+    background: var(--input-bg); color: oklch(0.95 0.005 260); font-size: 15px; transition: border-color .2s ease;
+  }
+  .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .form-row-2 { grid-template-columns: 1fr; } }
+  .toggle-row { display: flex; gap: 12px; }
+  .toggle-option {
+    cursor: pointer; flex: 1; text-align: center; padding: 13px; border-radius: 10px;
+    border: 1.5px solid var(--input-border); background: var(--input-bg); font-size: 14.5px; font-weight: 600;
+    color: oklch(0.85 0.01 260); transition: all .2s ease; font-family: inherit;
+  }
+  .toggle-option.selected { border-color: var(--gold); background: var(--gold-soft-bg); color: oklch(0.95 0.02 85); }
+  .form-error { color: var(--error); font-size: 13.5px; margin: 0; }
+  .form-submit { cursor: pointer; text-align: center; background: var(--gold); color: oklch(0.2 0.02 260); padding: 16px; border: none; border-radius: 12px; font-weight: 600; font-size: 16px; margin-top: 6px; transition: transform .25s ease, box-shadow .25s ease; width: 100%; font-family: inherit; }
+  .form-submit:hover { transform: scale(1.015); box-shadow: 0 10px 24px oklch(0.75 0.13 85 / 0.3); }
+  .form-note { text-align: center; font-size: 12.5px; color: var(--text-muted); margin: 0; }
+
+  .confirm-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 20px; padding: 48px 36px; text-align: center; }
+  .confirm-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--gold-soft-bg); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .confirm-check { width: 22px; height: 12px; border-left: 3px solid var(--gold); border-bottom: 3px solid var(--gold); transform: rotate(-45deg) translateY(-2px); }
+  .confirm-card h3 { font-size: 24px; margin: 0 0 12px; }
+  .confirm-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; max-width: 420px; margin: 0 auto; }
+
+  .site-footer { border-top: 1px solid oklch(0.3 0.03 260); padding: 36px 6vw; text-align: center; }
+  .site-footer img { height: 34px; object-fit: contain; margin-bottom: 14px; }
+  .site-footer p { font-size: 12.5px; color: var(--text-muted); margin: 0; }
+
+  .back-to-top {
+    position: fixed; bottom: 24px; right: 24px; z-index: 50; width: 46px; height: 46px; border-radius: 50%;
+    background: var(--card); border: 1px solid var(--input-border); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: opacity .3s ease, transform .25s ease, border-color .3s ease; opacity: 0; pointer-events: none;
+  }
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
+  .back-to-top:hover { transform: translateY(-3px); border-color: var(--gold); }
+  .back-to-top-arrow { width: 9px; height: 9px; border-top: 2px solid oklch(0.85 0.1 85); border-right: 2px solid oklch(0.85 0.1 85); transform: rotate(-45deg) translateY(2px); }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header">
+  <img src="./assets/academia-da-magia-logo.png" alt="Academia da Magia">
+  <nav class="site-nav" id="siteNav">
+    <button data-target="sec-dores">Dores</button>
+    <button data-target="sec-metodo">Método</button>
+    <button data-target="sec-depoimentos">Provas</button>
+    <button data-target="sec-sobre">Camila</button>
+    <button data-target="sec-faq">FAQ</button>
+  </nav>
+  <button class="btn-gold btn-gold-sm" id="navCta" data-target="waitlist-form" style="border:none;">Entrar na lista</button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-badge">
+    <span class="pulse-dot"></span>
+    Lista de espera aberta · Turma Out / Nov / Dez
+  </div>
+  <h1>Sua agência não precisa continuar no escuro.</h1>
+  <p class="subtitle">A próxima turma do <strong style="color:oklch(0.9 0.01 260);">AGIR</strong> — 90 dias de acompanhamento estratégico com Camila Moretti — abre em breve. Garanta acesso prioritário respondendo o formulário abaixo.</p>
+  <button class="btn-gold js-scroll-to-form">Quero entrar na lista de espera</button>
+  <p class="trust">Vagas limitadas · sem compromisso · acompanhamento direto com Camila</p>
+</section>
+
+<div class="hero-img-wrap reveal" data-reveal-id="hero-img">
+  <img src="./assets/camila-placeholder.svg" alt="Camila Moretti, mentora do programa AGIR">
+</div>
+
+<!-- COMO FUNCIONA -->
+<section class="section reveal" data-reveal-id="comofunciona">
+  <div class="grid grid-4">
+    <div class="card">
+      <h3 style="font-size:15.5px; margin-bottom:6px;">3 meses de acompanhamento</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">Jornada estruturada, do diagnóstico ao plano final.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15.5px; margin-bottom:6px;">6 encontros ao vivo</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">Aulas estratégicas com Camila, hot seats e respostas em tempo real.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15.5px; margin-bottom:6px;">Grupo ativo</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">Comunidade próxima para tirar dúvidas e manter o ritmo.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15.5px; margin-bottom:6px;">Execução guiada</h3>
+      <p style="font-size:13px; color:var(--text-muted); margin:0; line-height:1.5;">A cada passo, você sabe exatamente o que fazer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section id="sec-dores" class="section section-narrow center reveal" data-reveal-id="dores">
+  <p class="eyebrow">Olha aqui, com sinceridade</p>
+  <h2 class="title">Você sente que faz tudo e mesmo assim continua no mesmo lugar?</h2>
+  <div class="grid grid-3" style="text-align:left;">
+    <div class="card card-hover-blue">
+      <h3 style="font-size:17px; margin-bottom:10px;">Sua agência não cresce</h3>
+      <p style="font-size:14.5px; color:var(--text-muted); line-height:1.6; margin:0;">Você se esforça, posta, estuda… e o faturamento simplesmente não acompanha.</p>
+    </div>
+    <div class="card card-hover-blue">
+      <h3 style="font-size:17px; margin-bottom:10px;">Sem consistência nas vendas</h3>
+      <p style="font-size:14.5px; color:var(--text-muted); line-height:1.6; margin:0;">Um mês entra cliente, no outro o silêncio. Nada parece sob controle.</p>
+    </div>
+    <div class="card card-hover-blue">
+      <h3 style="font-size:17px; margin-bottom:10px;">Zero previsibilidade</h3>
+      <p style="font-size:14.5px; color:var(--text-muted); line-height:1.6; margin:0;">Você não sabe o que esperar do próximo mês — e isso te trava de planejar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- E POR ISSO -->
+<section class="section section-tighter center reveal" data-reveal-id="existe" style="padding-top:20px;">
+  <img src="./assets/agir-logo.png" alt="AGIR" style="height:64px; object-fit:contain; margin:0 auto 26px; display:block;">
+  <p class="eyebrow">E é por isso que existe</p>
+  <h2 style="font-size:clamp(24px,3vw,32px); line-height:1.3; margin:0 0 20px;">Programa de Estruturação e Crescimento em 90 dias.</h2>
+  <p style="font-size:16px; color:var(--text-secondary); line-height:1.7; margin:0 0 6px;">Não é um curso. Não é mais conteúdo.</p>
+  <p style="font-size:16px; color:oklch(0.9 0.01 260); line-height:1.7; margin:0 0 20px; font-weight:600;">É acompanhamento real.</p>
+  <p style="font-size:15px; color:var(--text-muted); line-height:1.7; max-width:560px; margin:0 auto;">Camila vai pegar na sua mão e te mostrar, na prática, como transformar sua agência em um negócio estruturado, organizado e que vende.</p>
+</section>
+
+<!-- METODO -->
+<div id="sec-metodo" class="section-alt">
+  <section class="section reveal" data-reveal-id="metodo">
+    <p class="eyebrow eyebrow-blue center">O método</p>
+    <img src="./assets/agir-logo.png" alt="AGIR" style="display:block; height:56px; object-fit:contain; margin:0 auto 20px; opacity:0.92;">
+    <h2 class="title center">Um caminho claro. Método A.G.I.R.</h2>
+    <div class="grid grid-4">
+      <div class="card card-method">
+        <div class="method-letter">A</div>
+        <h3 style="font-size:17px; margin-bottom:8px;">Análise</h3>
+        <p style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin:0;">Diagnóstico real do seu negócio, sem achismo.</p>
+      </div>
+      <div class="card card-method">
+        <div class="method-letter">G</div>
+        <h3 style="font-size:17px; margin-bottom:8px;">Gestão</h3>
+        <p style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin:0;">Organize rotina, financeiro, CRM e processos.</p>
+      </div>
+      <div class="card card-method">
+        <div class="method-letter">I</div>
+        <h3 style="font-size:17px; margin-bottom:8px;">Impulsionar</h3>
+        <p style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin:0;">Gere vendas com estratégia e previsibilidade.</p>
+      </div>
+      <div class="card card-method">
+        <div class="method-letter">R</div>
+        <h3 style="font-size:17px; margin-bottom:8px;">Resultado</h3>
+        <p style="font-size:14px; line-height:1.6; color:var(--text-secondary); margin:0;">Plano claro de crescimento para escalar.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- JORNADA -->
+<section class="section reveal" data-reveal-id="jornada">
+  <p class="eyebrow eyebrow-blue center">A jornada</p>
+  <h2 class="title center">Três meses. Três níveis de transformação.</h2>
+  <div class="grid grid-3-wide">
+    <div class="card">
+      <div class="month-label">MÊS 01</div>
+      <h3 style="font-size:18px; margin-bottom:10px;">Clareza &amp; Estrutura</h3>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0 0 14px;">Diagnóstico do negócio, posicionamento, rotina e financeiro organizados.</p>
+      <div class="bullet-list">
+        <div>· Diagnóstico inicial</div>
+        <div>· Estrutura básica</div>
+        <div>· Rotina e gestão</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="month-label">MÊS 02</div>
+      <h3 style="font-size:18px; margin-bottom:10px;">Atração &amp; Vendas</h3>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0 0 14px;">Posicionamento e processo de vendas previsível, de ponta a ponta.</p>
+      <div class="bullet-list">
+        <div>· Posicionamento claro</div>
+        <div>· Processo de vendas</div>
+        <div>· Conteúdo estratégico</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="month-label">MÊS 03</div>
+      <h3 style="font-size:18px; margin-bottom:10px;">Crescimento &amp; Direção</h3>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0 0 14px;">Plano executável de evolução rumo ao próximo patamar de faturamento.</p>
+      <div class="bullet-list">
+        <div>· Previsibilidade</div>
+        <div>· Plano de crescimento</div>
+        <div>· Direção para escalar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="sec-depoimentos" class="section reveal" data-reveal-id="depoimentos">
+  <p class="eyebrow center">Quem entrou, transformou</p>
+  <h2 class="title center">Histórias reais de quem saiu do escuro.</h2>
+  <div class="grid grid-3-wide">
+    <div class="card card-hover-gold quote-card">
+      <p class="quote">"O AGIR me deu um norte. Me mostrou exatamente o que eu precisava fazer."</p>
+      <p class="name">Pamela</p>
+      <p class="role">Betel Viagens</p>
+    </div>
+    <div class="card card-hover-gold quote-card">
+      <p class="quote">"O AGIR te pega na mão e te dá o trilho. Mostra o caminho pra transformar sua agência."</p>
+      <p class="name">Gisele</p>
+      <p class="role">Aluna AGIR</p>
+    </div>
+    <div class="card card-hover-gold quote-card">
+      <p class="quote">"Hoje eu consigo visualizar claramente onde estou e o que preciso fazer."</p>
+      <p class="name">Júlio Cesar</p>
+      <p class="role">Aluno AGIR</p>
+    </div>
+    <div class="card card-hover-gold quote-card">
+      <p class="quote">"Não foi só conteúdo. Foi alguém olhando pra mim, pra minha realidade."</p>
+      <p class="name">Alexia</p>
+      <p class="role">Aluna AGIR</p>
+    </div>
+    <div class="card card-hover-gold quote-card">
+      <p class="quote">"Você foi muito disponível o tempo inteiro… até nas dúvidas do dia a dia."</p>
+      <p class="name">Rosana Vian</p>
+      <p class="role">Aluna AGIR</p>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUSO + BONUS -->
+<div class="section-alt">
+  <section class="section reveal" data-reveal-id="inclusos">
+    <p class="eyebrow center">O que está incluso</p>
+    <h2 class="title center">Tudo o que você vai construir com a Camila.</h2>
+    <div class="grid grid-2" style="margin-bottom:44px;">
+      <div class="card-flat">CRM estruturado e funcionando</div>
+      <div class="card-flat">Processo de vendas de ponta a ponta</div>
+      <div class="card-flat">Rotina organizada e produtiva</div>
+      <div class="card-flat">Posicionamento definido e magnético</div>
+      <div class="card-flat">Diagnóstico completo do seu negócio</div>
+      <div class="card-flat">Hot seats personalizados</div>
+      <div class="card-flat">Plano final de crescimento</div>
+      <div class="card-flat">6 encontros ao vivo com Camila</div>
+    </div>
+    <h3 style="font-size:22px; text-align:center; margin:0 0 24px;">+ Bônus exclusivos</h3>
+    <div class="grid grid-2">
+      <div class="card">
+        <h4 style="font-size:15.5px; margin:0 0 8px; color:var(--gold);">Planilha financeira pronta</h4>
+        <p style="font-size:13.5px; color:var(--text-muted); line-height:1.6; margin:0;">Controle total de vendas, custos e margem.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:15.5px; margin:0 0 8px; color:var(--gold);">Modelo de CRM</h4>
+        <p style="font-size:13.5px; color:var(--text-muted); line-height:1.6; margin:0;">Organize cada lead com clareza.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:15.5px; margin:0 0 8px; color:var(--gold);">Scripts de venda</h4>
+        <p style="font-size:13.5px; color:var(--text-muted); line-height:1.6; margin:0;">Frases testadas para fechamento.</p>
+      </div>
+      <div class="card">
+        <h4 style="font-size:15.5px; margin:0 0 8px; color:var(--gold);">Roteiro de conteúdo</h4>
+        <p style="font-size:13.5px; color:var(--text-muted); line-height:1.6; margin:0;">Saiba o que postar, sem travar.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SOBRE CAMILA -->
+<section id="sec-sobre" class="section about-grid reveal" data-reveal-id="sobre">
+  <img src="./assets/camila-placeholder.svg" alt="Camila Moretti">
+  <div>
+    <p class="eyebrow">Quem vai te acompanhar</p>
+    <h2 style="font-size:clamp(24px,3vw,34px); margin:0 0 18px;">Camila Moretti</h2>
+    <p style="font-size:15.5px; line-height:1.7; color:var(--text-secondary); margin:0 0 16px;">Mentora de agentes de viagens e especialista em estruturação de negócios no turismo. Camila não ensina teoria — ela trabalha com o que realmente faz um agente sair do zero e construir uma agência de verdade: estrutura, processo, posicionamento e vendas.</p>
+    <p style="font-size:15.5px; line-height:1.7; color:var(--text-secondary); margin:0;">O diferencial não é só o conhecimento, é a forma como ela conduz. Não é alguém te entregando conteúdo — é alguém olhando para você, para o seu negócio, e te direcionando com clareza.</p>
+  </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section class="section section-tight center reveal" data-reveal-id="diferencial" style="padding-top:0;">
+  <p class="eyebrow">Diferencial</p>
+  <h2 style="font-size:clamp(24px,3vw,32px); margin:0 0 14px;">O AGIR não é genérico.</h2>
+  <p style="font-size:16px; color:var(--text-secondary); margin:0 0 40px;">É direcionado para a <strong style="color:oklch(0.9 0.01 260);">sua realidade</strong>.</p>
+  <div class="grid grid-2" style="text-align:left;">
+    <div class="card">
+      <h4 style="font-size:15.5px; margin:0 0 8px;">Aqui você não fica perdida</h4>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;">Cada passo é guiado e contextualizado.</p>
+    </div>
+    <div class="card">
+      <h4 style="font-size:15.5px; margin:0 0 8px;">Aqui você tem direção</h4>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.6; margin:0;">Saber o que fazer todo dia muda o jogo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE TE ESPERA -->
+<div class="section-alt">
+  <section class="section section-narrow reveal" data-reveal-id="espera">
+    <p class="eyebrow eyebrow-blue center">O que te espera no fim dos 90 dias</p>
+    <h2 class="title center" style="text-wrap:pretty;">Você não vai sair com mais informação. Você vai sair com um negócio.</h2>
+    <div class="grid grid-2">
+      <div class="card-method-flat">Uma agência estruturada de verdade</div>
+      <div class="card-method-flat">Clareza total sobre o seu negócio</div>
+      <div class="card-method-flat">Processo de vendas funcionando</div>
+      <div class="card-method-flat">Previsibilidade de faturamento</div>
+      <div class="card-method-flat">Direção concreta para crescer</div>
+      <div class="card-method-flat">Caminho real até R$100 mil/mês</div>
+    </div>
+  </section>
+</div>
+
+<!-- DUAS OPCOES -->
+<section class="section section-narrow reveal" data-reveal-id="duasopcoes">
+  <h2 style="font-size:clamp(24px,3vw,32px); text-align:center; margin:0 0 40px;">Você tem duas opções agora.</h2>
+  <div class="grid grid-2-wide">
+    <div class="option-card bad">
+      <h3>Continuar tentando sozinha</h3>
+      <p>Sem clareza, sem direção, repetindo o mesmo ciclo de esforço sem resultado.</p>
+    </div>
+    <div class="option-card good">
+      <h3>Entrar e estruturar de verdade</h3>
+      <p>Com a Camila te conduzindo. Sua agência saindo do papel para virar um negócio real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div id="sec-faq" class="section-alt">
+  <section class="section section-narrow reveal" data-reveal-id="faq">
+    <h2 style="font-size:clamp(24px,3vw,32px); text-align:center; margin:0 0 40px;">Esse programa é pra você?</h2>
+    <div class="grid grid-2-wide">
+      <div class="option-card bad card">
+        <h3 style="font-size:16px; margin:0 0 16px;">NÃO é para quem:</h3>
+        <div class="faq-list">
+          <div>Quer só assistir conteúdo, sem executar</div>
+          <div>Não vai colocar a mão na massa</div>
+          <div>Não leva o próprio negócio a sério</div>
+          <div>Espera resultado mágico sem esforço</div>
+        </div>
+      </div>
+      <div class="option-card good card">
+        <h3 style="font-size:16px; margin:0 0 16px;">É para quem:</h3>
+        <div class="faq-list">
+          <div>Quer transformar a agência num negócio real</div>
+          <div>Quer viver disso, com previsibilidade</div>
+          <div>Quer crescer com consistência, não com sorte</div>
+          <div>Está disposta a executar e ser direcionada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FORMULARIO -->
+<section id="waitlist-form" class="section section-tight reveal" data-reveal-id="form">
+  <div class="center" style="margin-bottom:36px;">
+    <p class="eyebrow">Reserve seu lugar</p>
+    <h2 style="font-size:clamp(26px,3.4vw,36px); margin:0 0 14px;">Vamos ver se o AGIR é pra sua agência.</h2>
+    <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.6; max-width:520px; margin:0 auto;">Responda algumas perguntas rápidas. Quem entrar na lista tem acesso prioritário quando as vagas da turma Out/Nov/Dez abrirem.</p>
+  </div>
+
+  <form id="waitlistForm" class="form-card" novalidate>
+    <div class="form-field">
+      <label for="f-nome">Nome completo</label>
+      <input type="text" id="f-nome" name="nome" placeholder="Seu nome" required>
+    </div>
+
+    <div class="form-row-2">
+      <div class="form-field">
+        <label for="f-whatsapp">WhatsApp</label>
+        <input type="tel" id="f-whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+      </div>
+      <div class="form-field">
+        <label for="f-email">E-mail</label>
+        <input type="email" id="f-email" name="email" placeholder="voce@email.com" required>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="f-tempo">Há quanto tempo você atua como agente de viagens?</label>
+      <select id="f-tempo" name="tempo" required>
+        <option value="">Selecione</option>
+        <option value="ainda-nao-comecei">Ainda não comecei</option>
+        <option value="menos-1-ano">Menos de 1 ano</option>
+        <option value="1-3-anos">De 1 a 3 anos</option>
+        <option value="mais-3-anos">Mais de 3 anos</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="f-faturamento">Qual o faturamento médio mensal da sua agência hoje?</label>
+      <select id="f-faturamento" name="faturamento" required>
+        <option value="">Selecione</option>
+        <option value="ainda-nao-fatura">Ainda não faturo</option>
+        <option value="ate-5k">Até R$5 mil</option>
+        <option value="5k-15k">R$5 mil a R$15 mil</option>
+        <option value="15k-30k">R$15 mil a R$30 mil</option>
+        <option value="acima-30k">Acima de R$30 mil</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="f-desafio">Qual seu maior desafio hoje na agência?</label>
+      <select id="f-desafio" name="desafio" required>
+        <option value="">Selecione</option>
+        <option value="vendas">Vender com consistência</option>
+        <option value="estrutura">Estruturar rotina, financeiro e processos</option>
+        <option value="posicionamento">Me posicionar e atrair clientes</option>
+        <option value="tempo">Falta de tempo / sobrecarga</option>
+        <option value="direcao">Não sei por onde começar</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label>Você consegue se comprometer com 6 encontros ao vivo em 90 dias?</label>
+      <input type="hidden" name="disponibilidade" id="f-disponibilidade" required>
+      <div class="toggle-row" role="group" aria-label="Disponibilidade para os encontros">
+        <button type="button" class="toggle-option" data-value="sim">Sim, é prioridade</button>
+        <button type="button" class="toggle-option" data-value="talvez">Preciso me organizar</button>
+      </div>
+    </div>
+
+    <p class="form-error" id="formError" hidden></p>
+
+    <button type="submit" class="form-submit">Quero acesso prioritário</button>
+    <p class="form-note">Suas respostas nos ajudam a ver se a turma de Out/Nov/Dez é o momento certo pra você.</p>
+  </form>
+
+  <div class="confirm-card" id="confirmCard" hidden>
+    <div class="confirm-icon"><div class="confirm-check"></div></div>
+    <h3 id="confirmTitle">Você está na lista!</h3>
+    <p>Assim que as vagas da turma Out/Nov/Dez abrirem, você recebe acesso prioritário direto no seu WhatsApp e e-mail.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <img src="./assets/academia-da-magia-logo.png" alt="Academia da Magia">
+  <p>© 2026 AGIR · Camila Moretti · Todos os direitos reservados.</p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+  <div class="back-to-top-arrow"></div>
+</button>
+
+<script src="./script.js"></script>
+</body>
+</html>

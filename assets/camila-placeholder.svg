@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" width="800" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a3352"/>
+      <stop offset="100%" stop-color="#1a2138"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="900" fill="url(#bg)"/>
+  <circle cx="400" cy="360" r="140" fill="#3a4568"/>
+  <path d="M400 500c-140 0-240 90-240 220v40h480v-40c0-130-100-220-240-220z" fill="#3a4568"/>
+  <text x="400" y="820" text-anchor="middle" font-family="Work Sans, Arial, sans-serif" font-size="26" fill="#8a93b8">Foto da Camila em breve</text>
+</svg>
