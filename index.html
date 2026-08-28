@@ -93,7 +93,7 @@
   .hero p.subtitle { position: relative; font-size: 19px; line-height: 1.6; color: var(--text-secondary); max-width: 640px; margin: 0 auto 36px; text-wrap: pretty; }
   .hero p.trust { position: relative; font-size: 13px; color: var(--text-muted); margin-top: 14px; }
   .hero-img-wrap { max-width: 1000px; margin: 0 auto 70px; padding: 0 6vw; }
-  .hero-img-wrap img { width: 100%; max-height: 420px; object-fit: cover; object-position: center 10%; border-radius: 20px; border: 1px solid var(--card-border); display: block; }
+  .hero-img-wrap img { width: auto; max-width: 100%; height: auto; max-height: 640px; object-fit: contain; border-radius: 20px; border: 1px solid var(--card-border); display: block; margin: 0 auto; }
 
   @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
   @keyframes floatBlob { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-20px,24px) scale(1.08); } }
