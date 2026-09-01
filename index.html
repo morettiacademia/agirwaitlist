@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AGIR, Lista de Espera | Academia da Magia</title>
-<meta name="description" content="AGIR, mentoria coletiva de 3 meses com Camila Moretti para donos de agências de viagens estruturarem processos, posicionamento e vendas. Entre na lista de espera da nova turma.">
+<title>AGIR | Academia da Magia</title>
+<meta name="description" content="AGIR, mentoria coletiva de 3 meses com Camila Moretti para donos de agências de viagens estruturarem processos, posicionamento e vendas. Vagas limitadas para a nova turma.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -153,9 +153,14 @@
   .faq-list { display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: var(--text-muted); line-height: 1.5; }
 
   /* FORM */
-  .typeform-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; }
-  .typeform-card iframe { display: block; width: 100%; height: 600px; border: none; }
   .form-note { text-align: center; font-size: 12.5px; color: var(--text-muted); margin: 0; }
+  .price-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 24px; padding: 48px 40px; text-align: center; }
+  .price-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-soft-bg); color: oklch(0.85 0.1 85); padding: 8px 18px; border-radius: 100px; font-size: 13px; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 30px; }
+  .price-main { font-family: 'Lora', serif; font-weight: 700; font-size: clamp(30px, 4.2vw, 46px); color: var(--text-title); margin: 0 0 8px; }
+  .price-star { font-size: 0.5em; vertical-align: super; color: var(--text-muted); margin-left: 2px; }
+  .price-alt { font-size: 16px; color: var(--text-muted); margin: 0 0 34px; }
+  .price-cta { display: inline-block; text-decoration: none; }
+  .price-fine { font-size: 12px; color: var(--text-muted); margin: 18px 0 0; }
 
   .site-footer { border-top: 1px solid oklch(0.3 0.03 260); padding: 36px 6vw; text-align: center; }
   .site-footer img { height: 34px; object-fit: contain; margin-bottom: 14px; }
@@ -184,7 +189,7 @@
     <button data-target="sec-sobre">Camila</button>
     <button data-target="sec-faq">FAQ</button>
   </nav>
-  <button class="btn-gold btn-gold-sm" id="navCta" data-target="waitlist-form" style="border:none;">Entrar na lista</button>
+  <a class="btn-gold btn-gold-sm" href="https://pay.hotmart.com/I107420558G?off=cjcqsqyg&amp;bid=1788278516975" target="_blank" rel="noopener" style="border:none; text-decoration:none;">Garantir vaga</a>
 </header>
 
 <!-- HERO -->
@@ -193,15 +198,15 @@
   <div class="hero-blob hero-blob-2"></div>
   <div class="hero-badge">
     <span class="pulse-dot"></span>
-    Lista de espera aberta · Turma AGIR
+    Vagas abertas · Turma AGIR
   </div>
   <img src="./assets/agir-camila-hero.png" alt="AGIR — Camila Moretti" class="hero-feature-img">
   <h1>Você não precisa de mais um curso. Sua agência precisa AGIR.</h1>
   <p class="subtitle" style="margin-bottom:16px;">Durante 3 meses, você terá o acompanhamento de Camila Moretti para organizar sua agência, fortalecer seus processos, melhorar sua estratégia comercial e, principalmente, transformar planejamento em ação e ação em vendas.</p>
   <p class="subtitle" style="margin-bottom:16px;">Se você sente que sua agência pode crescer mais, mas precisa de direção, método, acompanhamento e cobrança para fazer acontecer, essa próxima turma pode ser para você.</p>
-  <p class="subtitle">Preencha o formulário abaixo para entrar na lista de interesse e ter acesso prioritário à abertura das vagas.</p>
-  <button class="btn-gold js-scroll-to-form">Quero entrar na lista do AGIR</button>
-  <p class="trust">Vagas limitadas · sem compromisso · acompanhamento direto com Camila</p>
+  <p class="subtitle">São apenas 15 vagas nessa turma. Garanta a sua agora.</p>
+  <a class="btn-gold" href="https://pay.hotmart.com/I107420558G?off=cjcqsqyg&amp;bid=1788278516975" target="_blank" rel="noopener" style="text-decoration:none;">Quero garantir minha vaga</a>
+  <p class="trust">Apenas 15 vagas · acompanhamento direto com Camila</p>
 </section>
 
 <!-- COMO FUNCIONA -->
@@ -434,7 +439,7 @@
   </div>
   <p class="agir-stamp">AGIR</p>
   <p style="font-size:16px; color:oklch(0.9 0.01 260); line-height:1.6; max-width:520px; margin:0 auto 32px;">Chegou a hora de tirar os planos do papel e colocar a sua agência para AGIR.</p>
-  <button class="btn-gold js-scroll-to-form">QUERO PARTICIPAR DA PRÓXIMA TURMA</button>
+  <a class="btn-gold" href="https://pay.hotmart.com/I107420558G?off=cjcqsqyg&amp;bid=1788278516975" target="_blank" rel="noopener" style="text-decoration:none;">QUERO GARANTIR MINHA VAGA</a>
 </section>
 
 <!-- INCLUSO + BONUS -->
@@ -606,18 +611,24 @@
   </section>
 </div>
 
-<!-- FORMULARIO -->
-<section id="waitlist-form" class="section section-tight reveal" data-reveal-id="form">
+<!-- INVESTIMENTO -->
+<section id="investimento" class="section section-tight reveal" data-reveal-id="investimento">
   <div class="center" style="margin-bottom:36px;">
-    <p class="eyebrow">Reserve seu lugar</p>
+    <p class="eyebrow">Garanta sua vaga</p>
     <h2 style="font-size:clamp(26px,3.4vw,36px); margin:0 0 14px;">Vamos ver se o AGIR é pra sua agência.</h2>
-    <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.6; max-width:520px; margin:0 auto;">Responda algumas perguntas rápidas. Quem entrar na lista tem acesso prioritário quando as vagas da nova turma abrirem.</p>
+    <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.6; max-width:520px; margin:0 auto;">Turma com apenas 15 vagas — pra manter o acompanhamento próximo que faz o AGIR funcionar.</p>
   </div>
 
-  <div class="typeform-card">
-    <iframe src="https://2npq0say0na.typeform.com/to/Q3fFlQ9j" title="Formulário de lista de espera AGIR" loading="lazy"></iframe>
+  <div class="price-card">
+    <div class="price-badge">
+      <span class="pulse-dot"></span>
+      Apenas 15 vagas nessa turma
+    </div>
+    <p class="price-main">12x de R$ 227,22<span class="price-star">*</span></p>
+    <p class="price-alt">ou R$ 2.197,00 à vista</p>
+    <a href="https://pay.hotmart.com/I107420558G?off=cjcqsqyg&amp;bid=1788278516975" target="_blank" rel="noopener" class="btn-gold price-cta">QUERO GARANTIR MINHA VAGA</a>
+    <p class="price-fine">* Parcelamento sujeito a juros da operadora do cartão.</p>
   </div>
-  <p class="form-note" style="margin-top:18px;">Suas respostas nos ajudam a ver se a nova turma é o momento certo pra você.</p>
 </section>
 
 <footer class="site-footer">

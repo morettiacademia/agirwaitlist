@@ -33,12 +33,6 @@
   navButtons.forEach(function (btn) {
     btn.addEventListener('click', function () { scrollToId(btn.dataset.target); });
   });
-  document.getElementById('navCta').addEventListener('click', function () {
-    scrollToId('waitlist-form');
-  });
-  document.querySelectorAll('.js-scroll-to-form').forEach(function (el) {
-    el.addEventListener('click', function () { scrollToId('waitlist-form'); });
-  });
   backToTop.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
