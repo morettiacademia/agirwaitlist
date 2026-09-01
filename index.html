@@ -116,9 +116,34 @@
   .month-label { font-family: 'Lora', serif; font-size: 13px; font-weight: 700; color: var(--gold); letter-spacing: 0.06em; margin-bottom: 10px; }
   .bullet-list { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--text-muted); }
 
-  .quote-card p.quote { font-size: 15px; line-height: 1.65; color: oklch(0.85 0.01 260); margin: 0 0 18px; font-style: italic; }
-  .quote-card p.name { font-size: 14px; font-weight: 600; margin: 0; color: var(--text-title); }
-  .quote-card p.role { font-size: 13px; color: var(--text-muted); margin: 0; }
+  /* DEPOIMENTOS */
+  .testi-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+  .testi-card { grid-column: span 3; background: var(--card); border: 1px solid var(--card-border); border-radius: 18px; padding: 28px 30px; display: flex; flex-direction: column; transition: border-color .3s ease, transform .3s ease; }
+  .testi-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .testi-card.span-2 { grid-column: span 2; }
+  @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; } .testi-card, .testi-card.span-2 { grid-column: span 1; } }
+  .testi-step { font-family: 'Lora', serif; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .testi-top { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .testi-avatar { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; background: var(--gold-soft-bg); color: oklch(0.85 0.1 85); display: flex; align-items: center; justify-content: center; font-family: 'Lora', serif; font-weight: 700; font-size: 15px; }
+  .testi-name { font-size: 15px; font-weight: 600; margin: 0; color: var(--text-title); }
+  .testi-role { font-size: 12.5px; color: var(--text-muted); margin: 2px 0 0; }
+  .testi-context { font-size: 12.5px; color: var(--text-muted); font-style: italic; margin: 0 0 8px; }
+  .testi-quote { font-size: 16px; line-height: 1.6; color: oklch(0.9 0.01 260); margin: 0 0 16px; flex-grow: 1; }
+  .testi-quote .hl { color: var(--gold); font-weight: 600; font-style: normal; }
+  .testi-extra { font-size: 13px; line-height: 1.6; color: var(--text-muted); margin: 0 0 16px; padding-top: 14px; border-top: 1px solid var(--card-border); }
+  .testi-tag { align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--blue-soft); background: oklch(0.24 0.04 250 / 0.6); border: 1px solid oklch(0.4 0.08 250 / 0.5); padding: 6px 14px; border-radius: 100px; }
+
+  .chat-grid { display: flex; flex-direction: column; gap: 14px; max-width: 540px; margin: 0 auto 30px; }
+  .chat-bubble { max-width: 82%; padding: 15px 20px; border-radius: 18px; }
+  .chat-bubble.left { align-self: flex-start; background: var(--card); border: 1px solid var(--card-border); border-bottom-left-radius: 4px; }
+  .chat-bubble.right { align-self: flex-end; background: var(--gold-soft-bg); border: 1px solid oklch(0.5 0.08 85 / 0.4); border-bottom-right-radius: 4px; }
+  .chat-text { font-size: 15px; line-height: 1.55; margin: 0 0 6px; color: oklch(0.93 0.01 260); }
+  .chat-sender { font-size: 11.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0; color: var(--text-muted); }
+  .chat-bubble.right .chat-sender { color: oklch(0.8 0.1 85); }
+
+  .stat-trio { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin: 30px 0; }
+  .stat-trio span { font-family: 'Lora', serif; font-size: 14.5px; color: var(--text-secondary); padding: 9px 20px; border: 1px solid var(--card-border); border-radius: 100px; }
+  .agir-stamp { font-family: 'Lora', serif; font-weight: 700; font-size: clamp(38px, 6vw, 64px); letter-spacing: 0.06em; color: var(--gold); margin: 26px 0; }
 
   .option-card { background: var(--card); border-radius: 16px; padding: 28px; border-top: 3px solid var(--card-border); }
   .option-card.bad { border-top-color: var(--danger); }
@@ -307,35 +332,113 @@
 
 <!-- DEPOIMENTOS -->
 <section id="sec-depoimentos" class="section reveal" data-reveal-id="depoimentos">
-  <p class="eyebrow center">Quem entrou, transformou</p>
-  <h2 class="title center">Histórias reais de quem saiu do escuro.</h2>
-  <div class="grid grid-3-wide">
-    <div class="card card-hover-gold quote-card">
-      <p class="quote">"O AGIR me deu um norte. Me mostrou exatamente o que eu precisava fazer."</p>
-      <p class="name">Pamela</p>
-      <p class="role">Betel Viagens</p>
+  <p class="eyebrow center">Direto de quem já colocou em prática</p>
+  <h2 class="title center">Quem entra no AGIR não fica só no planejamento. Faz acontecer.</h2>
+  <p class="center" style="font-size:15.5px; color:var(--text-secondary); max-width:560px; margin:-20px auto 48px; line-height:1.7;">Estratégia é importante. Mas ela só transforma uma agência quando vira ação. Veja o que aconteceu com alguns dos participantes durante a jornada do AGIR.</p>
+
+  <div class="testi-grid">
+    <div class="testi-card reveal" data-reveal-id="testi-1">
+      <p class="testi-step">01 · Organizar</p>
+      <div class="testi-top">
+        <div class="testi-avatar">JC</div>
+        <div>
+          <p class="testi-name">Júlio Cruz</p>
+          <p class="testi-role">PicFan Viagens</p>
+        </div>
+      </div>
+      <p class="testi-quote">"O AGIR me ajudou demais a organizar minha rotina, <span class="hl">olhar para a empresa de forma estratégica</span> e planejar de acordo com meus objetivos."</p>
+      <span class="testi-tag">Organização + visão estratégica</span>
     </div>
-    <div class="card card-hover-gold quote-card">
-      <p class="quote">"O AGIR te pega na mão e te dá o trilho. Mostra o caminho pra transformar sua agência."</p>
-      <p class="name">Gisele</p>
-      <p class="role">Aluna AGIR</p>
+
+    <div class="testi-card reveal" data-reveal-id="testi-2">
+      <p class="testi-step">02 · Enxergar</p>
+      <div class="testi-top">
+        <div class="testi-avatar">BC</div>
+        <div>
+          <p class="testi-name">Bia Catto</p>
+          <p class="testi-role">Bia Catto Viagens</p>
+        </div>
+      </div>
+      <p class="testi-quote">"Eu pedi socorro e você simplesmente <span class="hl">foi sensacional</span>. O Júlio tinha razão."</p>
+      <p class="testi-extra">Depois das orientações da mentoria, Bia também colocou em prática mudanças que já queria fazer na sua marca e contou que Camila deu "o empurrão que precisava".</p>
+      <span class="testi-tag">Acompanhamento de verdade</span>
     </div>
-    <div class="card card-hover-gold quote-card">
-      <p class="quote">"Hoje eu consigo visualizar claramente onde estou e o que preciso fazer."</p>
-      <p class="name">Júlio Cesar</p>
-      <p class="role">Aluno AGIR</p>
+
+    <div class="testi-card span-2 reveal" data-reveal-id="testi-3">
+      <p class="testi-step">03 · Decidir</p>
+      <div class="testi-top">
+        <div class="testi-avatar">RC</div>
+        <div>
+          <p class="testi-name">Rodrigo Cabrero</p>
+          <p class="testi-role">Guia Mágico de Orlando</p>
+        </div>
+      </div>
+      <p class="testi-context">Após receber seu diagnóstico individual:</p>
+      <p class="testi-quote">"É impressionante como já <span class="hl">dá um norte pra gente</span>!!!!"</p>
+      <span class="testi-tag">Clareza + direcionamento</span>
     </div>
-    <div class="card card-hover-gold quote-card">
-      <p class="quote">"Não foi só conteúdo. Foi alguém olhando pra mim, pra minha realidade."</p>
-      <p class="name">Alexia</p>
-      <p class="role">Aluna AGIR</p>
+
+    <div class="testi-card span-2 reveal" data-reveal-id="testi-4">
+      <p class="testi-step">04 · Executar</p>
+      <div class="testi-top">
+        <div class="testi-avatar">T</div>
+        <div>
+          <p class="testi-name">Thomaz</p>
+          <p class="testi-role">Desenrola Turismo</p>
+        </div>
+      </div>
+      <p class="testi-context">Depois de um dos encontros:</p>
+      <p class="testi-quote">"<span class="hl">Já comecei umas mudanças hoje</span> só com o que eu vi ontem…"</p>
+      <span class="testi-tag">Da aula para a ação</span>
     </div>
-    <div class="card card-hover-gold quote-card">
-      <p class="quote">"Você foi muito disponível o tempo inteiro… até nas dúvidas do dia a dia."</p>
-      <p class="name">Rosana Vian</p>
-      <p class="role">Aluna AGIR</p>
+
+    <div class="testi-card span-2 reveal" data-reveal-id="testi-5">
+      <p class="testi-step">05 · Crescer</p>
+      <div class="testi-top">
+        <div class="testi-avatar">CB</div>
+        <div>
+          <p class="testi-name">Caroline Bardese</p>
+          <p class="testi-role">Perfekta Viagens</p>
+        </div>
+      </div>
+      <p class="testi-context">Ao compartilhar sua evolução:</p>
+      <p class="testi-quote">"<span class="hl">CRM e financeiro finalizado ✅</span><br>Calendário de conteúdo para o Insta 90% feito."</p>
+      <span class="testi-tag">Execução na prática</span>
     </div>
   </div>
+</section>
+
+<!-- BLOCO DE IMPACTO -->
+<div class="section-alt">
+  <section class="section section-tight reveal" data-reveal-id="impacto">
+    <h2 class="title center">E talvez o melhor depoimento seja não querer que termine.</h2>
+    <div class="chat-grid">
+      <div class="chat-bubble left reveal" data-reveal-id="chat-1">
+        <p class="chat-text">"Minha meta é entrar com abaixo-assinado pro AGIR não acabar hoje."</p>
+        <p class="chat-sender">Rodrigo</p>
+      </div>
+      <div class="chat-bubble right reveal" data-reveal-id="chat-2">
+        <p class="chat-text">"Última aula nada. Vou continuar enchendo o saco de todo mundo. Não quero nem saber."</p>
+        <p class="chat-sender">Júlio</p>
+      </div>
+    </div>
+    <p class="center" style="font-size:15px; color:var(--text-muted); max-width:520px; margin:0 auto; line-height:1.7;">90 dias depois, o que começou como uma mentoria se transforma em uma nova forma de olhar e conduzir a agência.</p>
+  </section>
+</div>
+
+<!-- AGORA E A SUA VEZ -->
+<section class="section section-tight center reveal" data-reveal-id="agora-sua-vez">
+  <h2 style="font-size:clamp(24px,3vw,32px); margin:0 0 20px;">Agora é a sua vez de AGIR.</h2>
+  <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.7; max-width:560px; margin:0 auto 10px;">Você pode continuar tentando organizar tudo sozinho, adiando decisões e esperando o momento certo.</p>
+  <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.7; max-width:560px; margin:0 auto;">Ou pode passar os próximos 90 dias com direcionamento, acompanhamento e uma metodologia criada para transformar planos em execução.</p>
+  <div class="stat-trio">
+    <span>90 dias</span>
+    <span>6 encontros</span>
+    <span>Uma transformação</span>
+  </div>
+  <p class="agir-stamp">AGIR</p>
+  <p style="font-size:16px; color:oklch(0.9 0.01 260); line-height:1.6; max-width:520px; margin:0 auto 32px;">Chegou a hora de tirar os planos do papel e colocar a sua agência para AGIR.</p>
+  <button class="btn-gold js-scroll-to-form">QUERO PARTICIPAR DA PRÓXIMA TURMA</button>
 </section>
 
 <!-- INCLUSO + BONUS -->
