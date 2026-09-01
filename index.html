@@ -161,6 +161,12 @@
   .price-alt { font-size: 16px; color: var(--text-muted); margin: 0 0 34px; }
   .price-cta { display: inline-block; text-decoration: none; }
   .price-fine { font-size: 12px; color: var(--text-muted); margin: 18px 0 0; }
+  .check-list { list-style: none; margin: 0 auto 28px; padding: 0; display: flex; flex-direction: column; gap: 13px; text-align: left; max-width: 460px; }
+  .check-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 15px; color: oklch(0.9 0.01 260); line-height: 1.5; }
+  .check-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+  .price-lead { font-size: 14.5px; color: var(--text-muted); font-style: italic; text-align: center; max-width: 460px; margin: 0 auto 32px; line-height: 1.6; }
+  .price-divider { border: none; border-top: 1px solid var(--card-border); margin: 0 0 32px; }
+  .price-closing { font-size: 14.5px; color: var(--text-secondary); font-style: italic; text-align: center; max-width: 440px; margin: 22px auto 0; line-height: 1.6; }
 
   .site-footer { border-top: 1px solid oklch(0.3 0.03 260); padding: 36px 6vw; text-align: center; }
   .site-footer img { height: 34px; object-fit: contain; margin-bottom: 14px; }
@@ -615,18 +621,33 @@
 <section id="investimento" class="section section-tight reveal" data-reveal-id="investimento">
   <div class="center" style="margin-bottom:36px;">
     <p class="eyebrow">Garanta sua vaga</p>
-    <h2 style="font-size:clamp(26px,3.4vw,36px); margin:0 0 14px;">Vamos ver se o AGIR é pra sua agência.</h2>
-    <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.6; max-width:520px; margin:0 auto;">Turma com apenas 15 vagas — pra manter o acompanhamento próximo que faz o AGIR funcionar.</p>
+    <h2 style="font-size:clamp(26px,3.4vw,36px); margin:0 0 14px;">Sua agência não precisa de mais informação.<br>Precisa de direção para crescer.</h2>
+    <p style="font-size:15.5px; color:var(--text-secondary); line-height:1.6; max-width:540px; margin:0 auto;">Durante 90 dias, você terá Camila Moretti ao seu lado para organizar o que hoje está solto, definir prioridades e transformar estratégia em execução.</p>
   </div>
 
   <div class="price-card">
+    <h3 style="font-size:18px; margin:0 0 22px;">No AGIR, você terá:</h3>
+    <ul class="check-list">
+      <li>90 dias de acompanhamento</li>
+      <li>6 encontros ao vivo com Camila Moretti</li>
+      <li>Diagnóstico e direcionamento da sua agência</li>
+      <li>Processos, CRM, financeiro, marketing e vendas</li>
+      <li>Plano de ação para transformar estratégia em execução</li>
+      <li>Grupo de acompanhamento durante toda a jornada</li>
+    </ul>
+    <p class="price-lead">Uma mentoria para quem decidiu parar de apenas planejar e começar a construir uma agência mais estruturada e preparada para crescer.</p>
+
+    <hr class="price-divider">
+
+    <p class="eyebrow center">Seu investimento para os próximos 90 dias</p>
+    <p class="price-main">12x de R$ 227,22<span class="price-star">*</span></p>
+    <p class="price-alt">ou R$ 2.197 à vista</p>
     <div class="price-badge">
       <span class="pulse-dot"></span>
-      Apenas 15 vagas nessa turma
+      Apenas 15 vagas nesta turma
     </div>
-    <p class="price-main">12x de R$ 227,22<span class="price-star">*</span></p>
-    <p class="price-alt">ou R$ 2.197,00 à vista</p>
-    <a href="https://pay.hotmart.com/I107420558G?off=cjcqsqyg&amp;bid=1788278516975" target="_blank" rel="noopener" class="btn-gold price-cta">QUERO GARANTIR MINHA VAGA</a>
+    <a href="https://pay.hotmart.com/I107420558G?off=cjcqsqyg&amp;bid=1788278516975" target="_blank" rel="noopener" class="btn-gold price-cta">QUERO COLOCAR MINHA AGÊNCIA PARA AGIR</a>
+    <p class="price-closing">Os próximos 90 dias vão passar de qualquer forma. A diferença é como você quer encontrar a sua agência ao final deles.</p>
     <p class="price-fine">* Parcelamento sujeito a juros da operadora do cartão.</p>
   </div>
 </section>
